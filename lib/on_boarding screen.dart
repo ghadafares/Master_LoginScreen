@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:login_screens/constants/defult_button.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 class OnBoarding extends StatefulWidget {
   const OnBoarding({Key? key}) : super(key: key);
 

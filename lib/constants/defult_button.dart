@@ -1,46 +1,28 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DefaultButton extends StatelessWidget {
-  final double radius;
-  final double? height;
-  final double? width;
-  //final Color? color;
-  final String label;
+  final Color buttonColor;
+  final String buttonText;
   final Color textColor;
-  final VoidCallback? onClick;
 
   const DefaultButton({
     Key? key,
-    this.radius = 5.0,
-    this.width,
-    this.height = 35.5,
-    //this.color =  Colors.lightGreen,
-    required this.label,
-    this.textColor = Colors.black,
-    this.onClick,
+    required this.buttonColor,
+    required this.buttonText,
+    required this.textColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ButtonTheme(
-
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(
-          radius,
-        ),
-      ),
-      child: Container(
-        height: height,
-        width: width,
-        child: MaterialButton(
-
-         // color: color,
-          onPressed: onClick,
-          child: Text(
-            label,
-            style: TextStyle(
-              color: textColor,
-            ),
+    return Container(
+      child: MaterialButton(
+        onPressed: () {},
+        color: buttonColor,
+        child: Text(
+          buttonText,
+          style: TextStyle(
+            color: textColor,
           ),
         ),
       ),
