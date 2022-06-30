@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login_screens/constants/defult_button.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 class OnBoarding extends StatefulWidget {
   const OnBoarding({Key? key}) : super(key: key);
 
@@ -10,6 +12,7 @@ class _OnBoardingState extends State<OnBoarding> {
   var boardController= PageController();
   @override
   Widget build(BuildContext context) {
+
     List<BoardingModel>boarding=[
       BoardingModel(image: 'assets/images/onboarding.png',
           body: 'we have young and professional delivery team that will bring your food as soon as possible to your doorstep ',
@@ -19,6 +22,7 @@ class _OnBoardingState extends State<OnBoarding> {
           title: 'buy any food from any favorite restaurant '),
 
     ];
+    bool isLast=true;
 
     return Scaffold(
         body:Padding(
@@ -31,20 +35,36 @@ class _OnBoardingState extends State<OnBoarding> {
                 )),
                 SizedBox(height: 30,),
                 Row(children: [
-              SmoothPageIndicator
+             /** SmoothPageIndicator(
+                controller: boardController,
+                effect:const ExpandingDotsEffect(
+                  dotColor: Colors.grey,
+                  dotHeight: 10,
+                  expansionFactor: 4,
+                  dotWidth: 10,
+                  spacing: 5.0,
+                  activeDotColor: Color(0xFF55C1AA),
+                ),
+              )**/
                 ],)
               ],
             )
         ));
   }
   Widget buildBoardingItem(BoardingModel model)=>Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.center,
     children: [
       Image(image: AssetImage('${model.image}'),),
       SizedBox(height: 30,),
-      Text('${model.title}'),
+      Text('${model.title}',
+      style: TextStyle(fontSize: 25,
+      fontWeight: FontWeight.bold),),
       SizedBox(height: 15,),
-      Text('${model.body}'),
+      Text('${model.body}',
+          style: TextStyle(fontSize: 15,
+              fontWeight: FontWeight.w300)),
+      SizedBox(height: 30,)
+
     ],
   );
 }
