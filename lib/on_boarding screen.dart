@@ -7,6 +7,7 @@ class OnBoarding extends StatefulWidget {
 }
 
 class _OnBoardingState extends State<OnBoarding> {
+  var boardController= PageController();
   @override
   Widget build(BuildContext context) {
     List<BoardingModel>boarding=[
@@ -30,7 +31,7 @@ class _OnBoardingState extends State<OnBoarding> {
                 )),
                 SizedBox(height: 30,),
                 Row(children: [
-
+              SmoothPageIndicator
                 ],)
               ],
             )
